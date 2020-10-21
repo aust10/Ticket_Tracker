@@ -1,6 +1,6 @@
 import { useObserver } from 'mobx-react'
 import React from 'react'
-import { makeStyles, Button } from '@material-ui/core'
+import { makeStyles, Button, Container, Card } from '@material-ui/core'
 import { useTicketStore } from '../../store/StoreContext'
 
 const useStyles = makeStyles({
@@ -25,25 +25,29 @@ const DeletedTicket = () => {
   const styles = useStyles()
   return useObserver(() => (
     <div>
-      {ticketStore.deletedTickets.map(ticket => (
-        <div
-          className={styles.items}
-          key={ticket}
-        >
-          <header className={styles.head}>
-            <h1 className={styles.center}>{ticket.title}</h1>
-            <Button
-              variant='outlined'
-              onClick={() => ticketStore.removeTicket(ticket._id)}
+      <Container>
+        <Card>
+          {ticketStore.deletedTickets.map(ticket => (
+            <div
+              className={styles.items}
+              key={ticket}
             >
+              <header className={styles.head}>
+                <h1 className={styles.center}>{ticket.title}</h1>
+                <Button
+                  variant='outlined'
+                  onClick={() => ticketStore.removeTicket(ticket._id)}
+                >
               Delete
-            </Button>
+                </Button>
 
-          </header>
-          <h3>Priority: {ticket.priority}</h3>
-          <p>{ticket.text}</p>
-        </div>
-      ))}
+              </header>
+              <h3>Priority: {ticket.priority}</h3>
+              <p>{ticket.text}</p>
+            </div>
+          ))}
+        </Card>
+      </Container>
     </div>
 
   ))

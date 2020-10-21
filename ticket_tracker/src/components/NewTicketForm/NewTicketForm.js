@@ -10,7 +10,10 @@ const useStyles = makeStyles({
   },
   field: {
     margin: 5
-  }
+  },
+  // description: {
+  //   textAlign: 'center'
+  // }
 })
 
 export function NewTicketForm (props) {
@@ -52,6 +55,7 @@ export function NewTicketForm (props) {
       <TextField
         id='outlined-basic'
         variant='outlined'
+        fullWidth='True'
         label='Description'
         value={ticketText}
         onChange={(evt) => setTicketText(evt.target.value)}

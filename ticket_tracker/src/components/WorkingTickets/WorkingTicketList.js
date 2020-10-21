@@ -26,6 +26,7 @@ function WorkingTicketList (props) {
   const { history } = props
   return useObserver(() => (
     <div>
+
       <Button onClick={() => history.push('/WorkingTicketList/DeletedTicket')}>Done Tickets</Button>
       <ul>
         {ticketStore.workingTickets.sort((a, b) => a.priority - b.priority).map(ticket => <div className={styles.items} key={ticket._id}>
@@ -35,7 +36,7 @@ function WorkingTicketList (props) {
               variant='outlined'
               onClick={() => ticketStore.removeWorkingTicket(ticket._id)} key={ticket._id}
             >
-                Move To Done
+                  Move To Done
             </Button>
           </header>
           <h3>Priority: {ticket.priority}</h3>
