@@ -12,7 +12,7 @@ router.post('/updateUser', (req, res) => {
 
   if (req.body.firstName !== '') objUpdate.firstName = req.body.firstName
   if (req.body.lastName !== '') objUpdate.lastName = req.body.lastName
-  let activeTickets = req.body.activeTickets
+  const activeTickets = req.body.activeTickets
   if (req.body.activeTickets !== []) objUpdate.activeTickets = activeTickets
   const updates = {
     $set: objUpdate
@@ -35,7 +35,6 @@ router.post('/ticketSubmit', (req, res) => {
   console.log(req.body)
 
   Ticket.submit(req.body.title, req.body.priority, req.body.text)
-
 })
 
 router.post('/removeTicketFromAll', (req, res) => {
@@ -56,7 +55,6 @@ router.post('/removeTicketFromAll', (req, res) => {
 })
 
 router.get('/getTickets', (req, res) => {
-
   Ticket.find({}, async (err, data) => {
     if (err) return res.status(500).send(err)
     if (data) {
@@ -64,6 +62,22 @@ router.get('/getTickets', (req, res) => {
       console.log(data)
     } else {
       console.log('no data to send')
+    }
+  })
+})
+
+// work in progress
+router.post('/updateBackend', (req, res) => {
+  console.log(req.body, 'body check')
+  Ticket.deleteMany({}, async (err, data) => {
+    if (err) return res.status(500).send(err)
+    await Ticket.insertMany([req.body.active]).then((docs) => { 
+      console.log(docs)
+    })
+    if (data) {
+      console.log('hello')
+
+      res.send(data)
     }
   })
 })

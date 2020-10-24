@@ -150,6 +150,71 @@ export function createTicketStore () {
         .then(data => {
           this.tickets = data
         })
+    },
+    onDragEnd (result, columns, setColumns) {
+      console.log(result.source, 'check')
+      if (!result.destination) return
+      const { source, destination } = result
+      if (source.droppableId !== destination.droppableId) {
+        const sourceClolumn = columns[source.droppableId]
+        const destColumn = columns[destination.droppableId]
+        const sourceItems = [...sourceClolumn.items]
+        const destItems = [...destColumn.items]
+        const [removed] = sourceItems.splice(source.index, 1)
+        destItems.splice(destination.index, 0, removed)
+        setColumns({
+          ...columns,
+          [source.droppableId]: {
+            ...sourceClolumn,
+            items: sourceItems
+          },
+          [destination.droppableId]: {
+            ...destColumn,
+            items: destItems
+          }
+        })
+      } else {
+        const column = columns[source.droppableId]
+        const coppiedItems = [...column.items]
+        const [removed] = coppiedItems.splice(source.index, 1)
+        coppiedItems.splice(destination.index, 0, removed)
+        setColumns({
+          ...columns,
+          [source.droppableId]: {
+            ...column,
+            items: coppiedItems
+          }
+        })
+      }
+    },
+    updateTicketLocation (columns) {
+      console.log(columns)
+      const check = []
+      for (const [key, value] of Object.entries(columns)) {
+        check.push(value)
+      }
+      console.log(check[0], 'check')
+      const active = check[0].items
+      const currentWorkingTickets = check[1].items
+      const completed = check[2].items
+      const deleted = check[3].items
+
+      fetch('/updateBackend',
+        {
+          method: 'post',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            active: active,
+            currentWorkingTickets: currentWorkingTickets,
+            completed: completed,
+            deleted: deleted
+          })
+        }
+      )
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+        })
     }
   }
 }

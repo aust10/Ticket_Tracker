@@ -6,7 +6,7 @@ function Settings (props) {
   return (
     <>
       <Button data-testid='about' onClick={() => history.push('/Settings/About')}>About</Button>
-      {/* <Button data-testid='main' onClick={() => history.push('/Settings/Main')}>Main</Button> */}
+      <Button data-testid='main' onClick={() => history.push('/Settings/Main')}>Main</Button>
     </>
   )
 }

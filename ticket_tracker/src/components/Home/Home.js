@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import TicketList from '../TicketList/TicketList'
+import DragDrop from '../DragDrop/DragDrop'
 import WorkingTicketList from '../WorkingTickets/WorkingTicketList'
 import { Container } from '@material-ui/core'
 import background from '../../Images/graphImg.png'
@@ -148,6 +149,7 @@ const Home = (props) => {
           </ErrorBoundary>
         </Container>
       </body>
+      <DragDrop />
     </>
   ))
 }
