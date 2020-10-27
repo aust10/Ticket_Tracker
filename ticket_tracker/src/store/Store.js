@@ -198,6 +198,9 @@ export function createTicketStore () {
       const currentWorkingTickets = check[1].items
       const completed = check[2].items
       const deleted = check[3].items
+      // console.log(active, 'this is active')
+      // working on updating the current user with the new working tickets. 
+      // this.UpdateCurrentUser('', '', currentWorkingTickets)
 
       fetch('/updateBackend',
         {

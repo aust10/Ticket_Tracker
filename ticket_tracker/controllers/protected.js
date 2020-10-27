@@ -66,19 +66,21 @@ router.get('/getTickets', (req, res) => {
   })
 })
 
-// work in progress
 router.post('/updateBackend', (req, res) => {
   console.log(req.body, 'body check')
   Ticket.deleteMany({}, async (err, data) => {
     if (err) return res.status(500).send(err)
-    await Ticket.insertMany([req.body.active]).then((docs) => { 
-      console.log(docs)
-    })
     if (data) {
       console.log('hello')
-
-      res.send(data)
     }
+    console.log(req.body.active, '1')
+    Ticket.insertMany(req.body.active, (err, stuff) => {
+      if (err) return res.status(500).send(err)
+      if (stuff) {
+        console.log('got it')
+        res.send(stuff)
+      }
+    })
   })
 })
 

@@ -25,6 +25,10 @@ const userSchema = Schema({
   activeTickets: {
     type: Array,
     required: false
+  },
+  completedTickets: {
+    type: Array,
+    required: false
   }
 })
 
