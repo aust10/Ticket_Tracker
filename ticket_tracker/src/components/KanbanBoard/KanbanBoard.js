@@ -68,9 +68,10 @@ function KanbanBoard () {
                           background: snapshot.isDraggingOver ? 'lightBlue' : '#FCFCFC',
                           padding: 4,
                           width: 250,
-                          minHeight: 500,
+                          height: 500,
                           border: '.25px solid black',
-                          borderRadius: '5px'
+                          borderRadius: '5px',
+                          overflow: 'auto'
                         }}
                       >
                         {column.items.map((item, index) => {

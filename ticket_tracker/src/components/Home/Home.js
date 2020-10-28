@@ -33,8 +33,7 @@ const useStyles = makeStyles({
   },
   ticketListTitleContainer: {
     display: 'flex',
-    justifyContent: 'space-between',
-    position: 'fixed'
+    justifyContent: 'space-between'
   },
   container: {
     display: 'flex',
@@ -63,7 +62,7 @@ const useStyles = makeStyles({
     borderTop: '.5px solid black'
   },
   tickets: {
-    marginTop: 100,
+    marginTop: 10,
     height: '80%',
     overflow: 'auto'
   }
