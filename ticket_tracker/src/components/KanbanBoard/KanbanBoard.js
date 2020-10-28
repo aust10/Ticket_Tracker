@@ -20,11 +20,6 @@ function KanbanBoard () {
 
   console.log(ticketStore.tickets)
 
-  // const itemsFromBackend = [
-  //   { id: uuid(), content: 'first task' },
-  //   { id: uuid(), content: 'second task' }
-  // ]
-
   const columnsFromBackend =
     {
       [uuid()]: {
@@ -61,7 +56,7 @@ function KanbanBoard () {
         {Object.entries(columns).map(([id, column]) => {
           return (
             <div style={{ display: 'flex', flexDirection: 'column', alignItmes: 'center' }} key={id}>
-              <h2>{column.name}</h2>
+              <h2 style={{ textAlign: 'center', color: '#063b64' }}>{column.name}</h2>
               <div style={{ margin: 8 }}>
                 <Droppable droppableId={id} key={id}>
                   {(provided, snapshot) => {
@@ -70,10 +65,12 @@ function KanbanBoard () {
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                         style={{
-                          background: snapshot.isDraggingOver ? 'lightBlue' : 'lightgrey',
+                          background: snapshot.isDraggingOver ? 'lightBlue' : '#FCFCFC',
                           padding: 4,
                           width: 250,
-                          minHeight: 500
+                          minHeight: 500,
+                          border: '.25px solid black',
+                          borderRadius: '5px'
                         }}
                       >
                         {column.items.map((item, index) => {
@@ -90,6 +87,7 @@ function KanbanBoard () {
                                       padding: 16,
                                       margin: '0 0 8px 0',
                                       minHeight: '50px',
+                                      borderRadius: '2.5px',
                                       backgroundColor: snapshot.isDragging ? '#263B4A' : '#456CB6',
                                       color: 'white',
                                       ...provided.draggableProps.style

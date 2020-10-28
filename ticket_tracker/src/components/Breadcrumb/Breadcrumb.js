@@ -1,20 +1,18 @@
 import React from 'react'
-import Typography from '@material-ui/core/Typography'
 import Breadcrubs from '@material-ui/core/Breadcrumbs'
 import HomeIcon from '@material-ui/icons/Home'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import { withStyles, emphasize, Chip, Link } from '@material-ui/core'
+import { withStyles, emphasize, Chip } from '@material-ui/core'
 import { withRouter } from 'react-router-dom'
 import { useObserver } from 'mobx-react'
 import { useTicketStore } from '../../store/StoreContext'
-import SignUp from '../SignUp/SignUp'
+import image from '../../Images/mountain.png'
 
 const StyledBreadcrumb = withStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.grey[400],
-    height: theme.spacing(3),
-    color: theme.palette.grey[800],
-    fontWeight: theme.typography.fontWeightRegular,
+    backgroundColor: theme.palette.grey[200],
+    height: theme.spacing(5),
+    color: '#0D7DD5',
+    fontWeight: theme.typography.fontWeightBold,
     '&:hover, &:focus': {
       backgroundColor: theme.palette.grey[300]
     },
@@ -31,32 +29,38 @@ const styles = {
     justifyContent: 'space-between',
     padding: '10px',
     paddingTop: '20px',
-    backgroundColor: '#fff0cf'
+    backgroundColor: 'white',
+    marginTop: 20,
+    marginBottom: 5
   },
   title: {
-    margin: 0
-    // // justifyContent: 'flex-end',
-    // padding: '10px'
+    margin: 0,
+    color: '#0D7DD5'
+  },
+  img: {
+    height: 5,
+    width: 5
+  },
+  left: {
+    display: 'flex',
+    paddingLeft: 10
   }
 }
 
-// function handleClick (evt) {
-//   evt.preventDefault()
-//   alert('You Clicked a breadcrumb')
-// }
 const Breadcrumb = (props) => {
   const { history, location } = props
-  // const { pathname } = location/
   const ticketStore = useTicketStore()
   const logOut = () => {
     ticketStore.logOut()
     history.push('/')
   }
 
-  // const pathnames = pathname.split('/').filter(x => x)
   return useObserver(() => (
     <div style={styles.breadcrumb}>
-      <h1 style={styles.title}>TicketDesk</h1>
+      <div style={styles.left}>
+        <img height='40px' width='40px' src={image} alt='image' />
+        <h1 style={styles.title}>TicketDesk</h1>
+      </div>
       <>
         <Breadcrubs aria-lable='My Tasks'>
           <StyledBreadcrumb
@@ -69,9 +73,9 @@ const Breadcrumb = (props) => {
             ? null
             : <Breadcrubs>
               <StyledBreadcrumb
-                data-testId='ticketList'
-                label='TicketList'
-                onClick={() => history.push('/TicketList')}
+                data-testId='KanbanBoard'
+                label='Kanban Board'
+                onClick={() => history.push('/KanbanBoard')}
               />
               <StyledBreadcrumb
                 data-testId='settings'
@@ -98,21 +102,3 @@ const Breadcrumb = (props) => {
 }
 
 export default withRouter(Breadcrumb)
-
-// Extra stuff not needed at the moment
-
-/* {pathnames.map((name, index) => {
-  const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`
-  console.log('******')
-  console.log(name)
-  console.log(routeTo)
-  console.log.apply(pathnames)
-  console.log('******')
-  return (
-    <StyledBreadcrumb
-      key={index}
-      label={name}
-      onClick={() => history.push(routeTo)}
-    />
-  )
-})} */

@@ -7,10 +7,10 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs'
 
 const StyledBreadcrumb = withStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.grey[100],
-    height: theme.spacing(3),
-    color: theme.palette.grey[800],
-    fontWeight: theme.typography.fontWeightRegular,
+    backgroundColor: theme.palette.grey[200],
+    height: theme.spacing(5),
+    color: '#0D7DD5',
+    fontWeight: theme.typography.fontWeightBold,
     '&:hover, &:focus': {
       backgroundColor: theme.palette.grey[300]
     },
@@ -32,8 +32,9 @@ const useStyles = makeStyles({
     textAlign: 'center',
     width: '40%',
     padding: 10,
-    backgroundColor: '#FFE7E5',
-    border: '2px dashed black'
+    backgroundColor: '#FCFCFC',
+
+    border: '1px solid black'
   },
   container: {
     display: 'flex',
@@ -110,7 +111,6 @@ function SignUp () {
                 className={styles.root}
                 varient='outlined'
                 onClick={() => ticketstore.login(user.email, user.password)}
-                // onClick={() => ticketstore.SignUp(email, password)}
               >
             Log In
               </Button>
@@ -163,7 +163,6 @@ function SignUp () {
                 className={styles.root}
                 varient='outlined'
                 onClick={() => ticketstore.signUp(user.email, user.password, user.firstName, user.lastName)}
-                // onClick={() => ticketstore.SignUp(email, password)}
               >
           Sign Up
               </Button>

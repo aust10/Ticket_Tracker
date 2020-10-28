@@ -12,7 +12,9 @@ const useStyles = makeStyles({
   },
   center: {
     textAlign: 'center',
-    textTransform: 'capitalize'
+    textTransform: 'capitalize',
+    textDecoration: 'underline',
+    color: '#0D7DD5'
   },
   head: {
     display: 'flex',

@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import { useTicketStore, TicketProvider } from '../../store/StoreContext'
+import { useTicketStore } from '../../store/StoreContext'
 import { NewTicketForm } from '../NewTicketForm/NewTicketForm'
 import { useObserver } from 'mobx-react'
 import Card from '@material-ui/core/Card'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import TicketList from '../TicketList/TicketList'
-import DragDrop from '../DragDrop/DragDrop'
 import WorkingTicketList from '../WorkingTickets/WorkingTicketList'
 import { Container } from '@material-ui/core'
-import background from '../../Images/graphImg.png'
 
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 
@@ -18,19 +16,19 @@ const useStyles = makeStyles({
     width: '35%',
     height: '35%',
     padding: 10,
-    margin: 5
+    margin: 5,
+    backgroundColor: '#FCFCFC'
 
   },
   title: {
     fontSize: 25,
     fontWeight: 'bold',
-    color: '#67000C'
+    color: '#063b64'
   },
   ticketListTitle: {
     flexDirection: 'row',
-    // fontSize: 25,
     fontWeight: 'bold',
-    color: '#67000C',
+    color: '#063b64',
     textDecoration: 'underline'
   },
   ticketListTitleContainer: {
@@ -40,24 +38,20 @@ const useStyles = makeStyles({
   },
   container: {
     display: 'flex',
-    justifyContent: 'space-between',
-    // marginTop: 200
+    justifyContent: 'space-between'
   },
   ticketList: {
     width: '65%',
     padding: 10,
     margin: 5,
     height: '500px',
-    overflow: 'auto'
+    overflow: 'auto',
+    backgroundColor: '#FCFCFC'
+
   },
   body: {
-    // marginTop: 20,
     marginLeft: 20,
-    marginBottom: 20,
-    // backgroundImage: `url(${background})`,
-    // backgroundRepeat: 'no-repeat',
-    // backgroundSize: 'auto 325px ',
-    // backgroundPosition: 'top center'
+    marginBottom: 20
   },
   paragraph: {
     paddingTop: 40,
@@ -72,7 +66,6 @@ const useStyles = makeStyles({
     marginTop: 100,
     height: '80%',
     overflow: 'auto'
-    // position: 'fixed'
   }
 })
 
@@ -83,13 +76,8 @@ const Home = (props) => {
   const { history } = props
   return useObserver(() => (
     <>
-    <hr className={styles.hr}/>
+      <hr className={styles.hr} />
       <body className={styles.body}>
-        {/* <header className={styles.paragraph}>
-          <h2><i>Maximize your customer <br /> support with TicketDesk!</i></h2>
-          <img href={background} />
-        </header> */}
-
         <Container maxWidth={false} className={styles.container}>
           <ErrorBoundary>
             {ticketStore.loggedIn

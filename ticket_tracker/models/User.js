@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
-const { List } = require('@material-ui/core')
 
 const { Schema } = mongoose
 

@@ -8,11 +8,14 @@ const useStyles = makeStyles({
     border: '1px solid black',
     borderRadius: 5,
     margin: 5,
-    padding: 5
+    padding: 5,
+    color: 'black'
   },
   center: {
     textAlign: 'center',
-    textTransform: 'capitalize'
+    textTransform: 'capitalize',
+    textDecoration: 'underline',
+    color: '#0D7DD5'
   },
   head: {
     display: 'flex',

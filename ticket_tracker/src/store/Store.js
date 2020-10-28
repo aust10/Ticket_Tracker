@@ -47,7 +47,6 @@ export function createTicketStore () {
         })
         .then(response => response.json())
         .then(data => {
-          // console.log(data)
           this.loggedIn = false
           this.loginCheck = true
           this.currentUser = data.currentUser
@@ -90,7 +89,6 @@ export function createTicketStore () {
           console.log('yep')
           this.deletedTickets.splice(this.deletedTickets.indexOf(ticket), 1)
           this.UpdateCurrentUser('', '', this.workingTickets)
-          // this.deletedTickets = this.deletedTickets.filter(ticket => ticket.id !== id)
         }
       })
     },

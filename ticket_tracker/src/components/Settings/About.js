@@ -5,7 +5,10 @@ import { useObserver } from 'mobx-react'
 
 const useStyles = makeStyles({
   inputs: {
-    textAlign: 'center'
+    textAlign: 'center',
+    backgroundColor: '#FCFCFC',
+    marginLeft: '20%',
+    marginRight: '20%'
   },
   btn: {
     padding: '15px 14px',
@@ -38,10 +41,10 @@ function About (props) {
   return useObserver(() => (
     <>
       <div>
-        <Button data-testid='button' onClick={() => history.push('/Settings')}>Back</Button>
+        <Button data-testid='button' onClick={() => history.push('/')}>Back</Button>
       </div>
       <div className={styles.inputs}>
-        <h1>Update User</h1>
+        <h1 style={{ color: '#063b64' }}>Update User</h1>
         <TextField
           id='outlined-basic'
           className={styles.box}

@@ -10,10 +10,7 @@ const useStyles = makeStyles({
   },
   field: {
     margin: 5
-  },
-  // description: {
-  //   textAlign: 'center'
-  // }
+  }
 })
 
 export function NewTicketForm (props) {
