@@ -92,7 +92,7 @@ const Home = (props) => {
                     <Typography variant='h4' onClick={() => setActive(true)} className={styles.ticketListTitle} gutterBottom>
               Active Tickets
                       <Typography variant='h6'>
-                Loggin To see your Working Tickets
+                Login To see your Working Tickets
                       </Typography>
                     </Typography>
                   </Container>
