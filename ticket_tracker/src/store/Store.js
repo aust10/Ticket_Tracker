@@ -52,6 +52,7 @@ export function createTicketStore () {
           this.loginCheck = true
           this.currentUser = data.currentUser
           this.workingTickets = data.currentUser.activeTickets
+          this.deletedTickets = data.currentUser.completedTickets
           this.token = data.token
         })
     },
@@ -193,14 +194,11 @@ export function createTicketStore () {
       for (const [key, value] of Object.entries(columns)) {
         check.push(value)
       }
-      console.log(check[0], 'check')
       const active = check[0].items
       const currentWorkingTickets = check[1].items
       const completed = check[2].items
       const deleted = check[3].items
-      // console.log(active, 'this is active')
-      // working on updating the current user with the new working tickets. 
-      // this.UpdateCurrentUser('', '', currentWorkingTickets)
+      console.log(check[3], 'check')
 
       fetch('/updateBackend',
         {
@@ -210,13 +208,16 @@ export function createTicketStore () {
             active: active,
             currentWorkingTickets: currentWorkingTickets,
             completed: completed,
-            deleted: deleted
+            deleted: deleted,
+            currentUser: this.currentUser
           })
         }
       )
         .then(response => response.json())
         .then(data => {
-          console.log(data)
+          this.workingTickets = data.activeTickets
+          this.deletedTickets = data.completedTickets
+          console.log(data, 'here is the data that is coming back')
         })
     }
   }

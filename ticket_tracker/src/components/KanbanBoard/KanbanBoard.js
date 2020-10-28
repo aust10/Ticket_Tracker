@@ -41,7 +41,7 @@ function KanbanBoard () {
       },
       [uuid()]: {
         name: 'Completed',
-        items: []
+        items: ticketStore.deletedTickets
       },
       [uuid()]: {
         name: 'Delete',
@@ -53,7 +53,7 @@ function KanbanBoard () {
   useEffect(() => {
     ticketStore.updateTicketLocation(columns)
     console.log(columns, 'hello')
-  }, [columns])
+  }, [columns, ticketStore.tickets, ticketStore.workingTickets, ticketStore.deletedTickets])
 
   return useObserver(() => (
     <div className={styles.items}>

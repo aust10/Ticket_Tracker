@@ -78,8 +78,22 @@ router.post('/updateBackend', (req, res) => {
       if (err) return res.status(500).send(err)
       if (stuff) {
         console.log('got it')
-        res.send(stuff)
+        // res.send(stuff)
       }
+    })
+    const objUpdate = {}
+    if (req.body.currentWorkingTickets !== []) objUpdate.activeTickets = req.body.currentWorkingTickets
+    if (req.body.completed !== []) objUpdate.completedTickets = req.body.completed
+    const updates = {
+      $set: objUpdate
+    }
+    User.updateOne({ _id: req.body.currentUser._id }, updates, (err, user) => {
+      if (err) return res.status(500).send(err)
+      console.log('profile updated')
+      User.findOne({ _id: req.body.currentUser._id }, (err, newuser) => {
+        if (err) return res.status(500).send(err)
+        res.send(newuser)
+      })
     })
   })
 })

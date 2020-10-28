@@ -149,7 +149,6 @@ const Home = (props) => {
           </ErrorBoundary>
         </Container>
       </body>
-      <DragDrop />
     </>
   ))
 }
