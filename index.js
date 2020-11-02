@@ -10,7 +10,7 @@ const ProtectedController = require('./ticket_tracker/controllers/protected')
 const http = require('http').createServer(app)
 const port = process.env.PORT || 8000
 
-app.use(express.static(path.join(__dirname, 'ticket_tracket/build')))
+app.use(express.static(path.join(__dirname, 'ticket_tracker/build')))
 app.use(express.json())
 app.use(morgan('tiny'))
 app.use('/', AuthController)
