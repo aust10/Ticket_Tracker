@@ -46,7 +46,7 @@ userSchema.methods.hashPassword = function (plainText) {
 }
 
 userSchema.methods.comparePassword = function (plainText) {
-  return bcrypt.compareSync(this.password, plainText)
+  return bcrypt.compareSync(plainText, this.password)
 }
 
 userSchema.methods.sanitize = function () {

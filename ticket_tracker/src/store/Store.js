@@ -47,12 +47,15 @@ export function createTicketStore () {
         })
         .then(response => response.json())
         .then(data => {
-          this.loggedIn = false
-          this.loginCheck = true
-          this.currentUser = data.currentUser
-          this.workingTickets = data.currentUser.activeTickets
-          this.deletedTickets = data.currentUser.completedTickets
-          this.token = data.token
+          if (data.errorMessage) { alert('invalid login credentials')}
+          else {
+            this.loggedIn = false
+            this.loginCheck = true
+            this.currentUser = data.currentUser
+            this.workingTickets = data.currentUser.activeTickets
+            this.deletedTickets = data.currentUser.completedTickets
+            this.token = data.token
+          }
         })
     },
     changeLogin () {

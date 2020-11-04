@@ -32,17 +32,17 @@ router.post('/login', (req, res) => {
   User.findOne({ email: req.body.email }, async (err, user) => {
     if (err) return res.status(500).send(err)
 
-    if (!user || user.comparePassword(req.body.password)) return res.status(400).send({ errorMessage: 'Invalid credentials' })
+    if (!user || !user.comparePassword(req.body.password)) return res.status(400).send({ errorMessage: 'Invalid credentials' })
 
     const token = jwt.sign({
       _id: user._id
     }, 'PROCESS')
 
     res.send({
-      token,
+      token: token,
       currentUser: user
     })
-    res.status(201).send(user.sanitize())
+    // res.status(201).send(user.sanitize())
   })
 })
 
