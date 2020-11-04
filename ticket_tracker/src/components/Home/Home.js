@@ -92,7 +92,7 @@ const Home = (props) => {
                     <Typography variant='h4' onClick={() => setActive(true)} className={styles.ticketListTitle} gutterBottom>
               Active Tickets
                       <Typography variant='h6'>
-                Login To see your Working Tickets
+                Login to see your working tickets
                       </Typography>
                     </Typography>
                   </Container>
@@ -114,13 +114,13 @@ const Home = (props) => {
                       ? <Typography variant='h4' onClick={() => setActive(false)} className={styles.ticketListTitle} gutterBottom>
                   Your Working Tickets
                         <Typography variant='h6'>
-                  Click for all active Tickets
+                  Click for all active tickets
                         </Typography>
                       </Typography>
                       : <Typography variant='h4' onClick={() => setActive(true)} className={styles.ticketListTitle} gutterBottom>
                   Active Tickets
                         <Typography variant='h6'>
-                  Click for your working Tickets
+                  Click for your working tickets
                         </Typography>
                       </Typography>}
                   </Container>

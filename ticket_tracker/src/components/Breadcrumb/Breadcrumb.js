@@ -87,7 +87,7 @@ const Breadcrumb = (props) => {
           {ticketStore.loggedIn
             ? <StyledBreadcrumb
               data-testId='LogOut'
-              label='Log in / Signup'
+              label='Log in / Sign up'
               onClick={() => ticketStore.changeLogin()}
             />
             : <StyledBreadcrumb

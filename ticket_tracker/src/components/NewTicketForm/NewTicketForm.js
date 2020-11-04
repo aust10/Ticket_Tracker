@@ -34,7 +34,7 @@ export function NewTicketForm (props) {
         />
         <TextField
           className={styles.field}
-          label='TicketPriority'
+          label='Ticket Priority'
           select
           value={ticketPriority}
           onChange={(evt) => setTicketPriority(evt.target.value)}
