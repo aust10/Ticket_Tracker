@@ -1,7 +1,13 @@
 # Ticket Tracker
 
-This is an on going personal project to create a ticket tracker with the option of a trello board like feature.
+This is a personal project to create a internal company tool I call Ticket Desk. It maintains a running active ticket thread where anyone within the company can submit a ticket with a 1-5 priority level and a custom comment. 
 
-The current stage: It has a working front and back end that store Tickets and will move tickets with the database updating each time. 
+<image src='/ticket_tracker/src/Images/mainPage.png' alt='main page'/>
 
-In progress: Working on getting the trello board feature to update the active tickets the current user is processing. 
+
+Once a user is registered they will be able to pull tickets from the active board and put them in their que. 
+
+
+
+
+An aditional feature is a project based "Trello" like board where a user can take tickets put them in working, compleated, and delete, all by mouse or finger click and drag.
