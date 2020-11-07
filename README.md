@@ -5,9 +5,6 @@ This is a personal project to create a internal company tool I call Ticket Desk.
 <image src='/ticket_tracker/src/Images/mainPage.png' alt='main page' height='300px' width='400px' style='float:center' />
 
 Once a user is registered they will be able to pull tickets from the active board and put them in their que. 
-
-<image src='/ticket_tracker/src/Images/userPage.png' alt='main page' height='300px' width='400px' style='text-align:center' />
-
 An aditional feature is a project based "Trello" like board where a user can take tickets put them in working, compleated, and delete, all by mouse or finger click and drag.
 
-<image src='ticket_tracker/src/Images/kanban1.png' alt='main page' height='400px' width='600px' style='text-align:center' />
+<image src='/ticket_tracker/src/Images/userPage.png' alt='main page' height='400px' width='400px' style='text-align:center' /> <image src='ticket_tracker/src/Images/kanban1.png' alt='main page' height='400px' width='600px' style='text-align:center' />
