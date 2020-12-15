@@ -10,9 +10,9 @@ An aditional feature is a project based "Trello" like board where a user can tak
 <image src='/ticket_tracker/src/Images/userPage.png' alt='main page' height='400px' width='400px' style='border:1px solid black' /> <image src='ticket_tracker/src/Images/kanban1.png' alt='main page' height='400px' width='600px' style='border:1px solid black' />
 
 ## To run this application
-#visit:<a href='http://209.151.144.62/'>Ticket Desk</a> 
+### Visit: <a href='http://209.151.144.62/'> Ticket Desk</a> 
 
-*OR
+***OR***
 - Clone this repository 
 - In order to get all the applications dependencies run npm i or npm install in the root directory "Ticket_Tracker" and in the sub directory "ticket_tracker".
 - In your terminal navigate to the root "Ticket_Tracker" and run npm start, this will start your server located in Index.js
