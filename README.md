@@ -10,7 +10,9 @@ An aditional feature is a project based "Trello" like board where a user can tak
 <p align='center'>
 <image src='/ticket_tracker/src/Images/userPage.png' alt='main page' height='400px' width='400px' style='border:1px solid black' /> <image src='ticket_tracker/src/Images/kanban1.png' alt='main page' height='400px' width='600px' style='border:1px solid black' />
 </p>
-## To run this application
+
+## To run this application 
+<br/>
 ### Visit: <a href='http://209.151.144.62/'> Ticket Desk</a> 
 
 ***OR***
