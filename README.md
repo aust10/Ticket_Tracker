@@ -13,7 +13,7 @@ An aditional feature is a project based "Trello" like board where a user can tak
 
 ## To run this application 
 <br/>
-**Visit:** <a href='http://209.151.144.62/'> Ticket Desk</a> 
+**Visit**: <a href='http://209.151.144.62/'> Ticket Desk</a> 
 
 ***OR***
 - Clone this repository 
