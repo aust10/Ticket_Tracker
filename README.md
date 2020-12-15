@@ -2,6 +2,8 @@
 
 This is a personal project where I created a internal company tool I call Ticket Desk. It's main functionality is to maintain a running active ticket thread where anyone within the company can submit a ticket with a 1-5 priority level and a write an custom comment in addition to the title of the ticket.
 <p align='center'>
+  [![Watch the video](ticket_tracker/src/Images/ScreenRecording.mov)](ticket_tracker/src/Images/ScreenRecording.mov)
+
   <image src='ticket_tracker/src/Images/ScreenRecording.mov' alt='main page' height='300px' width='400px' style='border:1px solid black'/>
 </p>
 Once a user is registered by signing up with the registration page, they will be able to pull tickets from the active board and put them in their que. 
