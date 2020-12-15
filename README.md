@@ -12,8 +12,8 @@ An aditional feature is a project based "Trello" like board where a user can tak
 </p>
 
 ## To run this application 
-<br/>
 ***Visit***
+<br/>
 <a href='http://209.151.144.62/'> Ticket Desk</a> 
 
 ***OR***
